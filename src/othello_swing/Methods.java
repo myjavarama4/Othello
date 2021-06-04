@@ -3,8 +3,6 @@ package othello_swing;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.event.MouseListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 
@@ -18,7 +16,7 @@ public final class Methods {
     public static int evaluate(Panel[][] board, Step step, String fce) {
         var rival = get_rival(step.getColor());
         number = 0;
-        for (int i = 0; i < board[step.getRow()][step.getColumn()].getVertical().size(); i++) {
+        for (var i = 0; i < board[step.getRow()][step.getColumn()].getVertical().size(); i++) {
             number += check(board, step, new Way(board[step.getRow()][step.getColumn()].getVerticalIndex(i), board[step.getRow()][step.getColumn()].getHorizontalIndex(i)), rival, fce);
         }
         return number;
@@ -38,7 +36,7 @@ public final class Methods {
                             color_focus(board, step, new Step(i, j, null), way, false);
                             return 1;
                         }
-                        int value = 0;
+                        var value = 0;
                         if (number > 0) {
                             value = 1;
                         }
@@ -60,8 +58,8 @@ public final class Methods {
         var zero = false;
         Step step = null;
         clear_focus(board);
-        for (int i = 0; i < 10 && !zero; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (var i = 0; i < 10 && !zero; i++) {
+            for (var j = 0; j < 10; j++) {
                 if (board[i][j].getBackground().equals(Color.WHITE)) {
                     count = Methods.evaluate(board, new Step(i, j, rival), "CHECK");
                     if (count > value) {
@@ -79,8 +77,8 @@ public final class Methods {
     }
 
     public static void clear_focus(Panel board[][]) {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
                 board[i][j].setBackground(board[i][j].getColor());
                 board[i][j].setVisible(true);
             }
@@ -88,8 +86,8 @@ public final class Methods {
     }
 
     public static void color_player(Panel board[][], Color play_player) {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
                 if (board[i][j].getBackground().equals(color[2])) {
                     board[i][j].setBackground(play_player);
                     board[i][j].setColor(play_player);
