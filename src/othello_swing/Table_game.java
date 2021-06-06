@@ -2,7 +2,6 @@ package othello_swing;
 
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
-import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JLabel;
@@ -11,34 +10,35 @@ public final class Table_game extends javax.swing.JFrame {
 
     public Table_game(java.awt.Color color[], boolean is_second_player, boolean start_player_2) {
         initComponents();
-        Panel board[][] = new Panel[10][10];
-        int width = Toolkit.getDefaultToolkit().getScreenSize().width, height = Toolkit.getDefaultToolkit().getScreenSize().height;
-        Clock date = new Clock("date");
-        Clock time = new Clock("time");
-        Clock day = new Clock("day");
+        var board = new Panel[10][10];
+        var width = Toolkit.getDefaultToolkit().getScreenSize().width;
+        var height = Toolkit.getDefaultToolkit().getScreenSize().height;
+        var date = new Clock("date");
+        var time = new Clock("time");
+        var day = new Clock("day");
         date.setBounds(width - 290, 10, 150, 40);
         time.setBounds(width - 300, 50, 300, 40);
         day.setBounds(width - 105, 90, 100, 40);
         getContentPane().add(date);
         getContentPane().add(time);
         getContentPane().add(day);
-        JPanel player_1 = new JPanel();
-        JPanel player_2 = new JPanel();
+        var player_1 = new JPanel();
+        var player_2 = new JPanel();
         player_1.setBounds(height + 12, height - 10, 46, 10);
         player_2.setBounds(height + 72, height - 10, 46, 10);
         player_1.setBackground(color[0]);
         player_2.setBackground(color[1]);
         getContentPane().add(player_1);
         getContentPane().add(player_2);
-        JProgressBar score_player_1 = new JProgressBar(1, 0, 75);
-        JProgressBar score_player_2 = new JProgressBar(1, 0, 75);
+        var score_player_1 = new JProgressBar(1, 0, 75);
+        var score_player_2 = new JProgressBar(1, 0, 75);
         score_player_1.setBounds(height + 10, 0, 50, height - 10);
         score_player_2.setBounds(height + 70, 0, 50, height - 10);
         score_player_1.setValue(2);
         score_player_2.setValue(2);
         getContentPane().add(score_player_1);
         getContentPane().add(score_player_2);
-        JLabel play_player = new JLabel("PLAYER_PLAY");
+        var play_player = new JLabel("PLAYER_PLAY");
         play_player.setFont(new java.awt.Font("Times New Roman", 1, 30));
         if (!start_player_2) {
             play_player.setForeground(color[0]);
@@ -47,7 +47,7 @@ public final class Table_game extends javax.swing.JFrame {
         }
         play_player.setBounds(height + 200, height / 2 - 30, 300, 100);
         getContentPane().add(play_player);
-        MouseListener mouse_listener = new MouseAdapter() {
+        var mouse_listener = new MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Methods.color_player(board, play_player.getForeground());
@@ -63,15 +63,15 @@ public final class Table_game extends javax.swing.JFrame {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Methods.clear_focus(board);
-                Panel panel = (Panel) evt.getSource();
+                var panel = (Panel) evt.getSource();
                 if (Methods.evaluate(board, new Step(panel.getRow(), panel.getColumn(), play_player.getForeground()), "PLAYER") == 0) {
                     board[panel.getRow()][panel.getColumn()].setVisible(false);
                 }
             }
         };
         Methods.mouse_listener = mouse_listener;
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
                 board[i][j] = new Panel(height, i, j);
                 board[i][j].addMouseListener(mouse_listener);
                 getContentPane().add(board[i][j]);

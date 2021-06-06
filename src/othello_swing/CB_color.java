@@ -5,7 +5,7 @@ import java.awt.Color;
 public final class CB_color extends javax.swing.JComboBox {
 
     public CB_color(int left, java.awt.Font font, String tool_tip) {
-        setBounds(left, 30, 140, 30);
+        setBounds(left, 30, 141, 30);
         setFont(font);
         setToolTipText(tool_tip);
         setBackground(Color.MAGENTA);

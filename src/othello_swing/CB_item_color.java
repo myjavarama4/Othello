@@ -1,11 +1,13 @@
 package othello_swing;
 
+import java.awt.Color;
+
 public final class CB_item_color {
 
     private final String COLOR_NAME;
-    private final java.awt.Color COLOR;
+    private final Color COLOR;
 
-    public CB_item_color(String COLOR_NAME, java.awt.Color COLOR) {
+    public CB_item_color(String COLOR_NAME, Color COLOR) {
         this.COLOR_NAME = COLOR_NAME;
         this.COLOR = COLOR;
     }
@@ -15,7 +17,7 @@ public final class CB_item_color {
         return COLOR_NAME;
     }
 
-    public java.awt.Color getColor() {
+    public Color getColor() {
         return COLOR;
     }
 }

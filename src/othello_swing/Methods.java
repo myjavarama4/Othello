@@ -114,8 +114,8 @@ public final class Methods {
         score_player_2.setValue(0);
         var can_rival_play = 0;
         var rival = get_rival(player.getForeground());
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
                 if (board[i][j].getBackground().equals(color[0])) {
                     score_player_1.setValue(score_player_1.getValue() + 1);
                 } else if (board[i][j].getBackground().equals(color[1])) {
@@ -158,7 +158,7 @@ public final class Methods {
         }
     }
 
-    public static Color get_rival(Color player) {
+    private static Color get_rival(Color player) {
         if (player.equals(color[0])) {
             return color[1];
         }
