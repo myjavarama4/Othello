@@ -9,7 +9,8 @@ public final class Clock extends javax.swing.JLabel implements java.awt.event.Ac
 
     private final SimpleDateFormat SIMPLE_DATE_FORMAT;
 
-    public Clock(String type) {
+    public Clock(String type, int x, int y, int width, int height) {
+        setBounds(x, y, width, height);
         setForeground(java.awt.Color.DARK_GRAY);
         switch (type) {
             case "date" -> {

@@ -13,15 +13,9 @@ public final class Table_game extends javax.swing.JFrame {
         var board = new Panel[10][10];
         var width = Toolkit.getDefaultToolkit().getScreenSize().width;
         var height = Toolkit.getDefaultToolkit().getScreenSize().height;
-        var date = new Clock("date");
-        var time = new Clock("time");
-        var day = new Clock("day");
-        date.setBounds(width - 290, 10, 150, 40);
-        time.setBounds(width - 300, 50, 300, 40);
-        day.setBounds(width - 105, 90, 100, 40);
-        getContentPane().add(date);
-        getContentPane().add(time);
-        getContentPane().add(day);
+        getContentPane().add(new Clock("date", width - 290, 10, 150, 40));
+        getContentPane().add(new Clock("time", width - 300, 50, 300, 40));
+        getContentPane().add(new Clock("day", width - 105, 90, 100, 40));
         var player_1 = new JPanel();
         var player_2 = new JPanel();
         player_1.setBounds(height + 12, height - 10, 46, 10);
