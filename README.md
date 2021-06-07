@@ -12,14 +12,17 @@ The project is no longer under development. I just updated the JDK version (8u12
 
 # GAME DESCRIPTION:
 
-At the beginning, a small window with four checkboxes and three comboboxes will appear.
-![image_2021-06-06_181804](https://user-images.githubusercontent.com/11876831/120931811-883d3f80-c6f3-11eb-805a-cb1a98821f57.png)
+At the beginning, a small window with three checkboxes and four comboboxes will appear.
+
+![obr�zek59](https://user-images.githubusercontent.com/11876831/121019120-6ef1cd00-c79f-11eb-895d-a4a9f1eb186e.png)
 
 The first checkbox determines whether you want to play PVP or PVE.
 
 The second checkbox determines if player two should start. (only for PVP)
 
 The third checkbox specifies the reverse mode. (rules are the same, but the player with the lower score wins)
+
+
 
 The first combobox determines the color of player one.
 
@@ -28,6 +31,8 @@ The second combobox determines the color of player two.
 The third combobox determines the color of the highlight of a possible player's move.
 
 To start, it is necessary that the colors of these comboboxes do not match!
+
+![Strip 3](https://user-images.githubusercontent.com/11876831/121018960-44a00f80-c79f-11eb-92bd-dd00eca74244.png)
 
 The fourth combobox determines the difficulty. (only for PVE)
 
