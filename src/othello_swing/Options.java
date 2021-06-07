@@ -13,7 +13,7 @@ public final class Options extends javax.swing.JFrame {
         var color_player_2 = new CB_color(145, font, "Player 2 color");
         var color_focus = new CB_color(285, font, "Focus color");
         var player_vs_player = new Check_box(5, 190, "PLAYER VS PLAYER", font);
-        var start_player = new Check_box(290, 170, "START PLAYER 2", font);
+        var start_player = new Check_box(250, 170, "START PLAYER 2", font);
         var reverse = new Check_box(460, 110, "REVERSE", font);
         var difficult = new JComboBox();
         difficult.addItem("EASY");

@@ -15,7 +15,6 @@ public final class CB_color extends javax.swing.JComboBox {
         addItem(new CB_item_color("YELLOW", Color.YELLOW));
         addItem(new CB_item_color("TURQUOISE", Color.CYAN));
         addItem(new CB_item_color("BLUE", Color.BLUE));
-        addItem(new CB_item_color("ORANGE", Color.ORANGE));
         setSelectedIndex(0);
     }
 }
